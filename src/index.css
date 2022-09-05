@@ -44,7 +44,7 @@ button {
   border:none;
   border-radius: 9px;
   padding:5px;
-  background-color: yellow;
+  background-color: orange;
 }
 
 .restart{
@@ -56,4 +56,13 @@ button {
 h1{
   padding-left:2rem;
   color:aliceblue;
+}
+
+.row{
+  display:flex;
+  align-items: center;
+}
+
+.row img{
+  max-height: 40px;
 }

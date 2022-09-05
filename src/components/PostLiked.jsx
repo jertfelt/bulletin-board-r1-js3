@@ -1,20 +1,17 @@
-import {useState, useEffect} from "react"
+import {useState, useEffect} from "react";
+import Loading from "./Loading";
 const  PostLiked = () => {
 
-  const [isLoading, setIsLoading] = useState(false);
-  const [like, setLike] = useState("./src/img/icons8-thumbs-up-96.png")
-
- useEffect(() => {
-  if (isLoading) {
-    setTimeout(() => {
-    setIsLoading(false);
-    setLike("")
-  }, 2000);
-  }
-}, [isLoading]);
+  const like = require("../img/icons8-thumbs-up-96.png")
 
 
-  return ( <div></div> );
+  return ( <div className="row">
+  <img src={like}
+  loading="lazy"
+  alt="En tumme upp!"/>
+  <p>You have liked this post!</p>
+
+  </div> );
 }
  
 export default PostLiked;
