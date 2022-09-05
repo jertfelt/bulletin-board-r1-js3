@@ -20,14 +20,21 @@ body {
 }
 
 .grid{
-  display:grid;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
   padding:2rem;
-  gap: 50px 100px;
+}
+
+@media (min-width: 600px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
 }
 .grid-item{
  background-color: lightblue;
  max-width:300px;
  padding:1rem;
+
  display:flex;
  flex-direction: column;
  align-items: center;
