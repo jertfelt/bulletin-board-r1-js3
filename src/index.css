@@ -4,15 +4,34 @@ body {
 }
 
 .loader {
-  border: 16px solid darkolivegreen;/* Light grey */
+  margin-top:1rem;
+  border: 16px solid lightblue;/* Light grey */
   border-top: 16px solid orange; /* Blue */
   border-radius: 50%;
-  width: 120px;
-  height: 120px;
+  width: 30px;
+  height: 30px;
   animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+.grid{
+  display:grid;
+  padding:2rem;
+  gap: 50px 100px;
+}
+.grid-item{
+ background-color: lightblue;
+ max-width:300px;
+ padding:1rem;
+ display:flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+button {
+
 }

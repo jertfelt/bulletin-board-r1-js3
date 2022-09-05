@@ -28,4 +28,4 @@ export const BulletinBoard = [ {
   },
 ]
 
-export default {BulletinBoard, };
+export default {BulletinBoard};
