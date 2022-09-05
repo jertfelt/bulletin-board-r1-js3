@@ -6,13 +6,17 @@ const useFetch = (url) => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  
 
 useEffect(() => {
   const abortCont = new AbortController();
   setTimeout(() => {
-    fetch(url, { signal: abortCont.signal })
+    fetch(url, {
+      headers: {
+        "Content-type" : "application/json"
+      }
+    }, { signal: abortCont.signal })
     .then(res => {
+      console.log(res)
       if (!res.ok) { 
         //kan inte hämta  från servern:
         throw Error('Kunde inte hämta från servern!');
