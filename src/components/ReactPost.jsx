@@ -17,9 +17,7 @@ const ReactPost = () => {
   useEffect(() => {
     if (newPage){ 
       const allQuestions = BulletinBoard.map( item => item.question)
-      const allQuestItem = BulletinBoard.map (item => item)
-      console.log(allQuestItem)
-      setQuestItem(allQuestItem);
+      setQuestions(allQuestions)
 
     }
   }, [newPage])
@@ -27,13 +25,13 @@ const ReactPost = () => {
 
 
   const restart = () => {
-  
+  setShowButt(true);
+  setRevealAnswer(false);
   }
 
   const showMeAnswer = () => {
     setIsLoading(true);
     setShowButt(false);
-   
  };
  
  useEffect(() => {
@@ -51,17 +49,15 @@ const ReactPost = () => {
   <div>
   <article className="react-post grid">
     <span className="grid-item">
-    <h2 className="question">
-      {questions
-    }</h2>
+    <h2 className="question">Fråga #{BulletinBoard[0].id}: {BulletinBoard[0].question}</h2>
     {showButt ? 
     <button className="reveal"
-    onClick={showMeAnswer} >Show me the answer </button> :null }
+    onClick={showMeAnswer}> SVAR</button> :null }
      {isLoading ? <Loading /> : null }
-     {revealAnswer ? <h3 className="answer">{answer}</h3> : null }
+     {revealAnswer ? <h3 className="answer">{BulletinBoard[0].answer}</h3> : null }
      </span>
   </article>
-  <button className="restart" onClick={restart} >Börja om</button>
+  <button className="restart" onClick={restart}> Börja om</button>
   </div> );
 }
  

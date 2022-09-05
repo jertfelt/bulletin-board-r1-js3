@@ -1,6 +1,7 @@
 body {
   margin: 0;
   background-color: darkolivegreen;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .loader {
@@ -33,5 +34,19 @@ body {
 }
 
 button {
+  border:none;
+  border-radius: 9px;
+  padding:5px;
+  background-color: yellow;
+}
 
+.restart{
+  background-color: aliceblue;
+  margin: 0 auto;
+  margin-left:50%;
+}
+
+h1{
+  padding-left:2rem;
+  color:aliceblue;
 }
