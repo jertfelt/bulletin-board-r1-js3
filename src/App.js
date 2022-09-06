@@ -1,18 +1,14 @@
-import ReactPost from "./components/ReactPost";
-
-
+import BulletinBoard from "./components/BulletinBoard"
 function App() {
-  // const item = BulletinBoard[0]
-  // console.log(item.id)
+  
+
 
   return (
     <div className="App">
+      <header>
       <h1>En liten hemsida om REACT</h1>
-      
-     <ReactPost 
-    //  id ="{BulletinBoard.id}"
-     />
-
+      </header>
+      <BulletinBoard />
     </div>
   );
 }

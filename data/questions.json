@@ -3,7 +3,7 @@
     {
     "id":5,
     "question": "Vad är en komponent?",
-    "answer": "En komponent är en beståndsdel i React - kan vara en header, en nav, en funktion. Genom att använda sig av komponenter kan hemsidorna vara enklare att göra användarvänliga - då man delar upp i komponenter. "
+    "answer": "En komponent är en beståndsdel i React - kan vara en header, en nav, en funktion. Genom att använda sig av komponenter kan hemsidorna vara enklare att göra användarvänliga - då man delar upp i komponenter."
   },
   { "id":4,
     "question": "Vad ÄR React egentligen?",
