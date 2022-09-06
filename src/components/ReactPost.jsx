@@ -1,4 +1,4 @@
-import { useEffect, useState} from "react";
+import { useState} from "react";
 import { BulletinBoard } from "./BulletinBoard";
 import PostLiked from "./PostLiked";
 
@@ -9,7 +9,15 @@ const ReactPost = () => {
   const pickAndShow= (e) => {
     e.preventDefault();
     const chosenItem = e.currentTarget.value; 
+    
     console.log("the item is: " + chosenItem)
+
+    const filter = BulletinBoard.filter(item => {
+      return item.id === parseInt(chosenItem)
+    })
+   
+    console.log(filter)
+    
     
     setShowDiv(true);
     setLikeButton(false);
@@ -28,7 +36,6 @@ const ReactPost = () => {
 
       <div 
       className={`wrapper__${item.id}`}
-      data-key={item.id}
       >
     
     {likeButton ?
@@ -40,12 +47,13 @@ const ReactPost = () => {
       >Gilla 
       </button>
       :null }
+
+      <div data-key={item.id}>
       {showDiv ? 
       <PostLiked/>
       :null }
+      </div> 
       </div>
-   
-     
     </div>  
     ))}
     </div> 
