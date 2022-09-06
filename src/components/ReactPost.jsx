@@ -1,12 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState} from "react";
 import { BulletinBoard } from "./BulletinBoard";
 import PostLiked from "./PostLiked";
 
 const ReactPost = () => {
-  const [showIfLiked, setShowIfLiked] = useState(false);
+  const [showDiv, setShowDiv] = useState(false);
+  const [likeButton, setLikeButton] = useState(true);
 
-  const changeButton = (value) => {
-    console.log("värdet är " + value)
+  const pickAndShow= (e) => {
+    e.preventDefault();
+    const chosenItem = e.currentTarget.value; 
+    console.log("the item is: " + chosenItem)
+    
+    setShowDiv(true);
+    setLikeButton(false);
   }
 
   return ( 
@@ -20,12 +26,26 @@ const ReactPost = () => {
       </span>
       <h3>{item.answer}</h3>
 
-      <button 
+      <div 
+      className={`wrapper__${item.id}`}
+      data-key={item.id}
+      >
+    
+    {likeButton ?
+      <button
       className="likebutton"
       key={item.id}
       value={item.id}
-      onClick={(e) =>changeButton(e.target.value)}>Gilla</button>
-    
+      onClick={pickAndShow}
+      >Gilla 
+      </button>
+      :null }
+      {showDiv ? 
+      <PostLiked/>
+      :null }
+      </div>
+   
+     
     </div>  
     ))}
     </div> 
