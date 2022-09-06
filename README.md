@@ -4,6 +4,7 @@ Individuell inlämningsuppgift - React Bulletin Board
 
 Beskrivning: Du ska bygga en "anslagstavla" med inlägg om React. Du ska skapa upp tre komponenter: BulletinBoard, ReactPost och PostLiked. Använda er utav det vi gått igenom på lektionerna (state, props, conditional rendering etc).
 
+1.
 BulletinBoard-komponenten ska fungera lite som ett FAQ, och ska ligga i App.js. Den ska fungera på följande vis:
 
     Här ska det finnas en array av objekt där varje objekt innehåller en fråga (se listan av frågor nedan) och ett svar. Se exempel nedan:

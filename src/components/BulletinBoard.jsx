@@ -1,10 +1,6 @@
-/*1.
-BulletinBoard-komponenten ska fungera lite som ett FAQ, och ska ligga i App.js. Den ska fungera på följande vis:
 
-Här ska det finnas en array av objekt där varje objekt innehåller en fråga (se listan av frågor nedan) och ett svar*/
-
-
-export const BulletinBoard = [ {
+export const BulletinBoard = [
+   {
     id:5,
     question: " Vad är en komponent?",
     answer: "En komponent är en beståndsdel i React - kan vara en header, en nav, en funktion. Genom att använda sig av komponenter kan hemsidorna vara enklare att göra användarvänliga - då man delar upp i komponenter. "
