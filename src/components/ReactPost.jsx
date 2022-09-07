@@ -1,117 +1,110 @@
-import { useEffect, useState } from "react";
-import Loading from "./Loading"
-import {BulletinBoard} from "./BulletinBoard";
+import { useState} from "react";
+import { BulletinBoard } from "./BulletinBoard";
+
 import PostLiked from "./PostLiked";
 
 const ReactPost = () => {
-  const [newPage, setNewPage] = useState(true)
-  const [questions, setQuestions] = useState("QWESTION");
-  const [showButt, setShowButt] = useState(true)
-  const [questItem, setQuestItem] = useState(null);
-  const [revealAnswer, setRevealAnswer] = useState(false);
-  const [answer, setAnswer] = useState("ANSWER MEEEEE");
-  const [isLoading, setIsLoading] = useState(false);
 
- const allQuestions = BulletinBoard.map( item => item.question)
-
-
-  useEffect(() => {
-    if (newPage){ 
-      const allQuestions = BulletinBoard.map( item => item.question)
-      setQuestions(allQuestions)
-
-    }
-  }, [newPage])
  
+  const [showDiv, setShowDiv] = useState(false);
+  // const [showDiv2, setShowDiv2] = useState(false);
+  // const [showDiv3, setShowDiv3] = useState(false);
+  // const [showDiv4, setShowDiv4] = useState(false);
+  // const [showDiv5, setShowDiv5] = useState(false);
+  const [likeButton, setLikeButton] = useState(true);
+  
 
-
-  const restart = () => {
-  setShowButt(true);
-  setRevealAnswer(false);
+  const pickAndShow= (e) => {
+    e.preventDefault();
+    const chosenItem = e.currentTarget.value; 
+  
+  //   switch(parseInt(chosenItem)){
+  //     case 1: 
+  //     console.log("Ett")
+  //     setShowDiv1(true);
+  //     setLikeButton(false);
+  //     break;
+  //       case 2:
+  //       console.log("Två")
+  //       setShowDiv2(true);
+  //       setLikeButton(false);
+  //       break;
+  //         case 3:
+  //           console.log("Tre")
+  //           setShowDiv3(true);
+  //           setLikeButton(false);
+  //           break;
+  //           case 4: 
+  //           console.log("Fyra")
+  //           setShowDiv4(true);
+  //           setLikeButton(false);
+  //           break;
+  //           case 5:
+  //             console.log("Fem")
+  //             setShowDiv5(true);
+  //             setLikeButton(false);
+  //             break;
+  //     default:
+  //     console.log("Något blev fel")
+  //   }
+  // }
   }
-
-  const showMeAnswer = () => {
-    //if sats - kolla id och hur man skickar
-    setIsLoading(true);
-    setShowButt(false);
- };
- 
- useEffect(() => {
-  if (isLoading) {
-    setTimeout(() => {
-    setIsLoading(false);
-    setRevealAnswer(true);
-  }, 2000);
-  }
-}, [isLoading]);
-
-
-
   return ( 
-  <div>
-  <article className="react-post grid">
-    <span className="grid-item">
-    <h2 className="question">Fråga #{BulletinBoard[0].id}: {BulletinBoard[0].question}</h2>
-   
-    {showButt ? 
-    <button className="reveal"
-    onClick={showMeAnswer}> SVAR</button> :null }
-     {isLoading ? <Loading /> : null }
-     {revealAnswer ? <h3 className="answer">{BulletinBoard[0].answer}</h3> : null }
-     <span>
-      <p><PostLiked></PostLiked></p>
-    </span>
-     </span>
+  <div className="grid">
+  {BulletinBoard.map((item) => (
+    <div className="grid-item"
+    key={item.id}>
+      <span className="grid-text">
+      <p>Fråga #{item.id}</p>
+      <h2>{item.question}</h2>
+      <h3>{item.answer}</h3>
+      </span>
+      <div 
+      className={`wrapper__${item.id} grid-likebutt`}
+      >
+        {!showDiv ? (
+      
+      <button
+      onClick={() => {
+        setShowDiv(!showDiv)
+      }}>Gilla
 
-     <span className="grid-item">
-    <h2 className="question">Fråga #{BulletinBoard[1].id}: {BulletinBoard[1].question}</h2>
-    {showButt ? 
-    <button className="reveal"
-    onClick={showMeAnswer}> SVAR</button> :null }
-     {isLoading ? <Loading /> : null }
-     {revealAnswer ? <h3 className="answer">{BulletinBoard[1].answer}</h3> : null }
-     </span>
-     <span className="grid-item">
-    <h2 className="question">Fråga #{BulletinBoard[2].id}: {BulletinBoard[2].question}</h2>
-    {showButt ? 
-    <button className="reveal"
-    onClick={showMeAnswer}> SVAR</button> :null }
-     {isLoading ? <Loading /> : null }
-     {revealAnswer ? <h3 className="answer">{BulletinBoard[2].answer}</h3> : null }
-     </span>
-     <span className="grid-item">
-    <h2 className="question">Fråga #{BulletinBoard[3].id}: {BulletinBoard[3].question}</h2>
-    {showButt ? 
-    <button className="reveal"
-    onClick={showMeAnswer}> SVAR</button> :null }
-     {isLoading ? <Loading /> : null }
-     {revealAnswer ? <h3 className="answer">{BulletinBoard[3].answer}</h3> : null }
-     </span>
-     <span className="grid-item">
-    <h2 className="question">Fråga #{BulletinBoard[4].id}: {BulletinBoard[4].question}</h2>
-    {showButt ? 
-    <button className="reveal"
-    onClick={showMeAnswer}> SVAR</button> :null }
-     {isLoading ? <Loading /> : null }
-     {revealAnswer ? <h3 className="answer">{BulletinBoard[4].answer}</h3> : null }
-     </span>
-  </article>
-  <article>
-    <div className="Further-Questions"> 
-      <h2>Har du någon mer fråga?</h2>
-    {/* //* Inte programmerat färdigt detta ännu:  */}
-    <form>
-      <label>
-      Ja, jag undrar...</label>
-      <textarea
-      placeholder="Vad står React för?">
-      </textarea>
-      <input type="submit" value="Fråga!"/>
-      <p>Obs: frågorna kommer besvaras i mån av tid, så fort det finns ett svar så kommer det synas här på hemsidan.</p>
-      </form></div>
-  </article>
-  <button className="restart" onClick={restart}> Börja om</button>
-  </div> );
+      </button>
+      
+    
+        ): (
+          <div className="postlike">
+          <PostLiked />
+      
+         
+          <button
+          
+          onClick={() => {
+            setShowDiv(!showDiv)
+          }}> Ogilla
+          </button>
+         
+         </div>
+        )
+      }
+      {/* // <button
+      // className="likebutton"
+      // value={item.id}
+      // onClick={pickAndShow}
+      // > </button> */}
+     
+{/* 
+      <div data-key={0 + item.id}>
+      {showDiv1 ? 
+      <PostLiked/>
+      :null }
+     
+      </div>  */}
+      </div>
+    </div>  
+    ))}
+  </div> 
+);
 }
  
 export default ReactPost;

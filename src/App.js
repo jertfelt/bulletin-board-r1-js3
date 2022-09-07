@@ -1,17 +1,34 @@
-import ReactPost from "./components/ReactPost";
 
+import Homepage from "./components/Homepage";
+import NotFound from "./components/NotFound"
+import Navbar from "./components/Navbar"
+import { BrowserRouter as Router, Navigate, Route, Routes} from "react-router-dom";
+import Footer from "./components/Footer";
 function App() {
-  // const item = BulletinBoard[0]
-  // console.log(item.id)
 
   return (
+    <Router>
     <div className="App">
-      <h1>En liten hemsida om REACT</h1>
-     <ReactPost 
-    //  id ="{BulletinBoard.id}"
-     />
-
+    <Navbar /> 
+   
+    <Routes>
+    <Route path="/" element={<Homepage />} /> 
+    <Route path='/privacy-policy' component={() => { 
+     window.location.href = 'https://github.com/jertfelt/'; 
+     return null;
+    }}/>
+     <Route path='/privacy-policy' component={() => { 
+     window.location.href = 'https://github.com/jertfelt/'; 
+     return null;
+    }}/>
+  
+  
+  
+    
+    </Routes>
+ 
     </div>
+    </Router>
   );
 }
 
