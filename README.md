@@ -1,4 +1,7 @@
 Studentarbete - kurs i React 
+![image](https://user-images.githubusercontent.com/30622818/188831701-52116a1f-679a-4039-a828-01c5d1074bb9.png)
+![image](https://user-images.githubusercontent.com/30622818/188831742-61100741-0775-4f37-a565-00a126becbff.png)
+![image](https://user-images.githubusercontent.com/30622818/188831784-fb915982-6abb-4b91-b4ab-39a4831c4bac.png)
 
 
 
