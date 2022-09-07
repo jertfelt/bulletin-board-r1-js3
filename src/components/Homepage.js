@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ReactPost from "./ReactPost";
 import Loading from "./Loading";
+import AboutPost from "./AboutPost"
 
 const Homepage = () => {
   const [showAllItems, setShowAllItems] = useState(false)
@@ -28,7 +29,7 @@ useEffect(() => {
     
     <div className="bulletin-board">
     {toggleShowAll ? 
-    <div className="intro">
+    <article className="intro">
     <h2>Här samlar vi en massa mysig information om React. </h2>
     <p>Ett studentprojekt av Tova Jertfelt</p>
 
@@ -36,11 +37,14 @@ useEffect(() => {
     onClick={toggleBoard}>
       Visa anslagstavlan
     </button> 
-    </div>
+    </article>
     :null }
      {isLoading ? <Loading /> : null }
     {showAllItems ? 
+    <div>
     <ReactPost />
+    <AboutPost />
+    </div>
     :null }
     </div>
   );

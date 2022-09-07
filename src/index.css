@@ -170,3 +170,12 @@ header nav a:hover{
 .div404 img{
   border-radius: 39px;
 }
+
+.about{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  position:relative;
+  background-color: antiquewhite;
+  padding:2rem;
+}
