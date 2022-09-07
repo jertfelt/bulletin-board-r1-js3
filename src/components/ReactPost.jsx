@@ -54,41 +54,36 @@ const ReactPost = () => {
   {BulletinBoard.map((item) => (
     <div className="grid-item"
     key={item.id}>
-      <span className="row">
+      <span className="grid-text">
       <p>Fråga #{item.id}</p>
       <h2>{item.question}</h2>
-      </span>
       <h3>{item.answer}</h3>
-
+      </span>
       <div 
-      className={`wrapper__${item.id}`}
+      className={`wrapper__${item.id} grid-likebutt`}
       >
         {!showDiv ? (
-  
-     
-      <label>
-      Gilla
-      <input
-      type="checkbox"
-      onChange={() => {
-        setShowDiv(!showDiv)
-      }}>
-
-      </input>
       
-      </label>
+      <button
+      onClick={() => {
+        setShowDiv(!showDiv)
+      }}>Gilla
+
+      </button>
+      
+    
         ): (
           <div className="postlike">
           <PostLiked />
-         <label>
-          Ogilla
-          <input
-          type="checkbox"
-          onChange={() => {
+      
+         
+          <button
+          
+          onClick={() => {
             setShowDiv(!showDiv)
-          }}>
-          </input>
-         </label>
+          }}> Ogilla
+          </button>
+         
          </div>
         )
       }

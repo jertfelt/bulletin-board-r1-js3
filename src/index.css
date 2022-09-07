@@ -17,7 +17,6 @@ body {
 }
 
 .loadingscreen {
- 
   position: fixed;
   top: 50%;
   left: 50%;
@@ -32,9 +31,6 @@ body {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-
-
-
 
 header{
 margin: 0 auto;
@@ -77,9 +73,8 @@ header nav a:hover{
 .grid{
   max-width: 1200px;
   margin: 0 auto;
-  
   display: grid;
-  gap: 1rem;
+  gap: 2rem;
   padding:2rem;
 }
 
@@ -127,9 +122,34 @@ header nav a:hover{
 
 .grid-item{
  background-color: goldenrod;
- max-width:300px;
+ max-width:400px;
  padding:2rem;
+ padding-bottom:3em;
  display:flex;
  flex-direction: column;
- align-items: center;
+ filter: drop-shadow(5px 10px 4px black);
+}
+
+.grid-text h3{
+  font-weight: 400;
+  line-height: 1.3rem;
+  word-spacing: 0.3rem;
+}
+
+.grid-likebutt {
+  cursor: pointer;
+ 
+}
+.grid-likebutt button{
+  position: absolute;
+	right: 50px;
+  cursor: pointer;
+  background-color: black;
+  border: none;
+  border-radius: 9px;
+  padding:4px 8px;
+  color:antiquewhite;
+  font-weight: bold;
+  letter-spacing: 1px;
+
 }
