@@ -2,15 +2,14 @@
 import Homepage from "./components/Homepage";
 import NotFound from "./components/NotFound"
 import Navbar from "./components/Navbar"
-import { BrowserRouter as Router, Navigate, Route, Routes} from "react-router-dom";
-import Footer from "./components/Footer";
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
+
 function App() {
 
   return (
     <Router>
     <div className="App">
     <Navbar /> 
-   
     <Routes>
     <Route path="/" element={<Homepage />} /> 
     <Route path='/privacy-policy' component={() => { 
@@ -22,11 +21,13 @@ function App() {
      return null;
     }}/>
     <Route path="*" element={<NotFound />}/>
-  
+    
     </Routes>
- 
+    
     </div>
+    
     </Router>
+    
   );
 }
 
