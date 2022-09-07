@@ -1,13 +1,16 @@
 
 import Homepage from "./components/Homepage";
+import NotFound from "./components/NotFound"
 import Navbar from "./components/Navbar"
-import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import { BrowserRouter as Router, Navigate, Route, Routes} from "react-router-dom";
+import Footer from "./components/Footer";
 function App() {
 
   return (
     <Router>
     <div className="App">
-    <Navbar />  
+    <Navbar /> 
+   
     <Routes>
     <Route path="/" element={<Homepage />} /> 
     <Route path='/privacy-policy' component={() => { 
@@ -18,8 +21,12 @@ function App() {
      window.location.href = 'https://github.com/jertfelt/'; 
      return null;
     }}/>
-    </Routes>
+  
+  
+  
     
+    </Routes>
+ 
     </div>
     </Router>
   );
