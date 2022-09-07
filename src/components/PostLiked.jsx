@@ -10,7 +10,7 @@ const  PostLiked = () => {
   <img src={likeimg}
   loading="lazy"
   alt="En tumme upp!"/>
-  <p>You have liked this post!</p>
+  <h2>Du gillar detta!</h2>
 
   </div> );
 }
