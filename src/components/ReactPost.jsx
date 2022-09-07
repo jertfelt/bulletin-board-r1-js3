@@ -1,28 +1,54 @@
 import { useState} from "react";
 import { BulletinBoard } from "./BulletinBoard";
+
 import PostLiked from "./PostLiked";
 
 const ReactPost = () => {
+
+ 
   const [showDiv, setShowDiv] = useState(false);
+  // const [showDiv2, setShowDiv2] = useState(false);
+  // const [showDiv3, setShowDiv3] = useState(false);
+  // const [showDiv4, setShowDiv4] = useState(false);
+  // const [showDiv5, setShowDiv5] = useState(false);
   const [likeButton, setLikeButton] = useState(true);
+  
 
   const pickAndShow= (e) => {
     e.preventDefault();
     const chosenItem = e.currentTarget.value; 
-    
-    console.log("the item is: " + chosenItem)
-
-    const filter = BulletinBoard.filter(item => {
-      return item.id === parseInt(chosenItem)
-    })
-   
-    console.log(filter)
-    
-    
-    setShowDiv(true);
-    setLikeButton(false);
+  
+  //   switch(parseInt(chosenItem)){
+  //     case 1: 
+  //     console.log("Ett")
+  //     setShowDiv1(true);
+  //     setLikeButton(false);
+  //     break;
+  //       case 2:
+  //       console.log("Två")
+  //       setShowDiv2(true);
+  //       setLikeButton(false);
+  //       break;
+  //         case 3:
+  //           console.log("Tre")
+  //           setShowDiv3(true);
+  //           setLikeButton(false);
+  //           break;
+  //           case 4: 
+  //           console.log("Fyra")
+  //           setShowDiv4(true);
+  //           setLikeButton(false);
+  //           break;
+  //           case 5:
+  //             console.log("Fem")
+  //             setShowDiv5(true);
+  //             setLikeButton(false);
+  //             break;
+  //     default:
+  //     console.log("Något blev fel")
+  //   }
+  // }
   }
-
   return ( 
   <div className="grid">
   {BulletinBoard.map((item) => (
@@ -37,27 +63,52 @@ const ReactPost = () => {
       <div 
       className={`wrapper__${item.id}`}
       >
-    
-    {likeButton ?
-      <button
-      className="likebutton"
-      key={item.id}
-      value={item.id}
-      onClick={pickAndShow}
-      >Gilla 
-      </button>
-      :null }
+        {!showDiv ? (
+  
+     
+      <label>
+      Gilla
+      <input
+      type="checkbox"
+      onChange={() => {
+        setShowDiv(!showDiv)
+      }}>
 
-      <div data-key={item.id}>
-      {showDiv ? 
+      </input>
+      
+      </label>
+        ): (
+          <div className="postlike">
+          <PostLiked />
+         <label>
+          Ogilla
+          <input
+          type="checkbox"
+          onChange={() => {
+            setShowDiv(!showDiv)
+          }}>
+          </input>
+         </label>
+         </div>
+        )
+      }
+      {/* // <button
+      // className="likebutton"
+      // value={item.id}
+      // onClick={pickAndShow}
+      // > </button> */}
+     
+{/* 
+      <div data-key={0 + item.id}>
+      {showDiv1 ? 
       <PostLiked/>
       :null }
-      </div> 
+     
+      </div>  */}
       </div>
     </div>  
     ))}
-    </div> 
-
+  </div> 
 );
 }
  

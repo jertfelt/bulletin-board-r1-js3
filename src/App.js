@@ -1,23 +1,27 @@
-import React, { useState } from "react";
 
-import ReactPost from "./components/ReactPost";
+import Homepage from "./components/Homepage";
+import Navbar from "./components/Navbar"
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 function App() {
-  
-const [showAllItems, setShowAllItems] = useState(false)
 
   return (
+    <Router>
     <div className="App">
-      <header>
-      <h1>En liten hemsida om REACT</h1>
-      </header>
-      <div className="bulletin-board">
-      {/* <button className="reveal giganticbutt" 
-      onClick={() => setShowAllItems(true)}>
-        Visa anslagstavlan
-      </button> */}
-      <ReactPost />
-      </div>
+    <Navbar />  
+    <Routes>
+    <Route path="/" element={<Homepage />} /> 
+    <Route path='/privacy-policy' component={() => { 
+     window.location.href = 'https://github.com/jertfelt/'; 
+     return null;
+    }}/>
+     <Route path='/privacy-policy' component={() => { 
+     window.location.href = 'https://github.com/jertfelt/'; 
+     return null;
+    }}/>
+    </Routes>
+    
     </div>
+    </Router>
   );
 }
 
