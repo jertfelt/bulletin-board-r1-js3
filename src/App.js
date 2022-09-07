@@ -21,10 +21,8 @@ function App() {
      window.location.href = 'https://github.com/jertfelt/'; 
      return null;
     }}/>
+    <Route path="*" element={<NotFound />}/>
   
-  
-  
-    
     </Routes>
  
     </div>

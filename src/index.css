@@ -156,5 +156,17 @@ header nav a:hover{
 
 .padding-top-large{
   padding-top:5em;
-  background-color: aliceblue;
+}
+.div404{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  position:relative;
+  top:50px;
+  color:antiquewhite;
+  font-size:24px;
+  flex-wrap: wrap;
+}
+.div404 img{
+  border-radius: 39px;
 }
