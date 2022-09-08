@@ -1,9 +1,10 @@
 const AboutPost = () => {
   return ( <>
   <article className="about">
-    <h2>Kommentarer:</h2>
+   
     <div>
-      <h3>Några kommentarer:</h3>
+    <h2>Kommentarer:</h2>
+    
       <p>Att få till själva grunden var lätt som en plätt, det som sedan tog mig en vecka var att *försöka* förstå hur jag kan få Gilla-knappen att bara fungera på en specifik mappad div. Samma dag som allting skulle in så konsulterade jag delvis en klasskamrat och delvis en Todo-list tutorial och insåg att om jag lade in 'liked' i datan som renderades, så kunde jag på så vis filtrera de utmappade arrayerna. FAST: Detta är bara i DOM:en som jag ser det i dagsläget, jag påverkar ju faktiskt inte den fysiska datan då jag inte gör vare sig POST/GET-requests. 
       </p>
       <h3>Svårt:</h3>

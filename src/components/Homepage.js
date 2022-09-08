@@ -43,10 +43,11 @@ useEffect(() => {
     {showAllItems ? 
     <div>
       <BulletinBoard/>
-    {
-    <AboutPost /> }
+   
+     
     </div>
     :null }
+    <AboutPost />
     </div>
   );
 }
