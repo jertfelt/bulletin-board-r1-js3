@@ -172,10 +172,23 @@ header nav a:hover{
 }
 
 .about{
+  margin-top:2em;
   display:flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   position:relative;
+  border-radius: 19px;
   background-color: antiquewhite;
   padding:2rem;
+}
+.about img{
+  max-width: 50%;
+}
+.about div{
+  padding:1rem;
+  margin-right:2rem;
+}
+.about div ul li{
+  margin-bottom:10px;
+  list-style:georgian;
 }

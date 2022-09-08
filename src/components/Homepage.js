@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import ReactPost from "./ReactPost";
+import BulletinBoard from "./BulletinBoard";
 import Loading from "./Loading";
 import AboutPost from "./AboutPost"
 
@@ -42,10 +42,12 @@ useEffect(() => {
      {isLoading ? <Loading /> : null }
     {showAllItems ? 
     <div>
-    <ReactPost />
-    <AboutPost />
+      <BulletinBoard/>
+   
+     
     </div>
     :null }
+    <AboutPost />
     </div>
   );
 }
