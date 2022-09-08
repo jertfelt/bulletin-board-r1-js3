@@ -32,6 +32,15 @@ const setLike = (id) => {
   renderWithLikes.find(({Qid}) => Qid === id).liked = true;
   setListOfItems(renderWithLikes)
 }
+console.log(listOfItems)
+// const setUnLike = (id) => {
+//   const regretLikes = [...listOfItems];
+  
+//   regretLikes.find(({Qid}) => Qid === id).liked = false;
+//   console.log(regretLikes);
+//   setListOfItems(regretLikes)
+// }
+
 
   return (
     <div className="grid">
@@ -43,6 +52,7 @@ const setLike = (id) => {
         key={item.Qid}
         {...item}
         likePost={setLike}
+        // unLikePost={setUnLike}
         />
       ))}
       

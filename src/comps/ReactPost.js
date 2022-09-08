@@ -1,13 +1,18 @@
 import {useRef, useState} from "react";
 import PostLiked from "../comps/PostLiked";
 
-const ReactPost = ({Qid, question, answer, liked, likePost}) => {
+const ReactPost = ({Qid, question, answer, liked, likePost, setUnLike}) => {
   const itemRef = useRef();
 
   const likeButt = (e) => {
     e.preventDefault();
     likePost(Qid)
   }
+
+  // const unLikeButt = (e) =>{
+  //   e.preventDefault();
+  //   setUnLike(Qid)
+  // }
 
   return (
   <div ref={itemRef}
@@ -21,7 +26,11 @@ const ReactPost = ({Qid, question, answer, liked, likePost}) => {
       className={`wrapper__${Qid} grid-likebutt`}
     >
       {liked ? (
-        <PostLiked />
+        <>
+      <PostLiked 
+      />
+      {/* <button onClick={unLikeButt}>Ogilla</button>   */}
+      </>
       ): (
         <button
         onClick={likeButt}>
