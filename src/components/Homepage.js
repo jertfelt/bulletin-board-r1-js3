@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import ReactPost from "./ReactPost";
+import BulletinBoard from "../comps/BulletinBoard";
+// import ReactPost from "./ReactPost";
 import Loading from "./Loading";
-import AboutPost from "./AboutPost"
+// import AboutPost from "./AboutPost"
 
 const Homepage = () => {
   const [showAllItems, setShowAllItems] = useState(false)
@@ -42,8 +43,9 @@ useEffect(() => {
      {isLoading ? <Loading /> : null }
     {showAllItems ? 
     <div>
-    <ReactPost />
-    <AboutPost />
+      <BulletinBoard/>
+    {/* <ReactPost />
+    <AboutPost /> */}
     </div>
     :null }
     </div>
