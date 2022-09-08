@@ -1,5 +1,5 @@
 
-const  PostLiked = ({Qid, liked, likePost}) => {
+const  PostLiked = () => {
   const likeimg = require("../img/icons8-thumbs-up-96.png")
   return ( 
   <div className="row"
