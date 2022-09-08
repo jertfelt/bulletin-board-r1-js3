@@ -2,6 +2,8 @@ Studentarbete - kurs i React
 ![image](https://user-images.githubusercontent.com/30622818/188831701-52116a1f-679a-4039-a828-01c5d1074bb9.png)
 ![image](https://user-images.githubusercontent.com/30622818/188831742-61100741-0775-4f37-a565-00a126becbff.png)
 ![image](https://user-images.githubusercontent.com/30622818/188831784-fb915982-6abb-4b91-b4ab-39a4831c4bac.png)
+![image](https://user-images.githubusercontent.com/30622818/189083134-b9aadee4-feea-4ac8-89a7-14c50d0f2ab4.png)
+
 
 1. Har lagt in routers
 2. Har lagt in en loader och lekt med useEffect
